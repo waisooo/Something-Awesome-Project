@@ -32,11 +32,25 @@ int main() {
   const auto client = memory.GetModuleAddress("client.dll");
   const auto engine = memory.GetModuleAddress("engine.dll");
 
+  // Check if csgo.exe is running and the module addresses are found
+  if (!client) {
+    std::cout << "Failed to csgo.exe\n";
+    return 1;
+  }
+
+  if (!client || !engine) {
+    std::cout << "Failed to find the module addresses\n";
+    return 1;
+  }
+
   std::cout << "Aimbot is running!\n";
 
-  auto aimbot = true;
+  // Aimbot is off by default
+  auto aimbot = false;
 
-  // infinite hack loop
+  std::cout << "Press the up arrow key to toggle the aimbot\n";
+
+  // Infinite loop to keep the aimbot running forever
   while (true) {
     // Sleep the thread for 1ms so that the program does not consume all the CPU
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
@@ -52,6 +66,10 @@ int main() {
       } else {
         std::cout << "Aimbot is off!\n";
       }
+
+      // Sleep the thread for 200ms so that the key press is not registered
+      // multiple times
+      std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }
 
     if (!aimbot)
