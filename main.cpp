@@ -156,9 +156,14 @@ int main() {
       }
     }
 
+    // Smoothing factor is used to adjust the speed of the aimbot. The higher
+    // the value, the less obvious the aimbot is to other players. This comes at
+    // a cost of the aimbot being less responsive.
+    const auto smoothing_factor = 4.f;
+
     // Write the best angle to the view angles
     memory.Write<Vector3>(clientState + offset::dwClientState_ViewAngles,
-                          viewAngles + bestAngle);
+                          viewAngles + bestAngle / smoothing_factor);
   }
 
   return 0;
