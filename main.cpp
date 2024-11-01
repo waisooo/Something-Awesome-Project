@@ -5,6 +5,12 @@
 #include <iostream>
 #include <thread>
 
+// This file contains the offsets for the game Counter-Strike: Global Offensive
+// as well as the main function that contains the aimbot logic.
+
+// The offset namespace contains the offsets for CSGO. These offsets are used to
+// read and write to specific parts of memory within the game to get information
+// about the game state and change the game state.
 namespace offset {
 constexpr ::std::ptrdiff_t dwLocalPlayer = 0xDEF97C;
 constexpr ::std::ptrdiff_t dwEntityList = 0x4E051DC;

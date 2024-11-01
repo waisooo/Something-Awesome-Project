@@ -4,6 +4,16 @@
 #include <Windows.h>
 #include <string_view>
 
+// File that contains the Memory class is essentially a wrapper around the
+// Windows Memory API that allows us to read and write to the memory of a
+// process. In the memory class we have:
+// 1. A constructor that initialises the process ID and handle of the process
+//    with the given process name
+// 2. A destructor that frees the opened handle
+// 3. A function that returns the base address of a module by name
+// 4. A function that reads process memory and returns it
+// 5. A function that writes process memory
+
 class Memory {
 public:
   // Constructor that initialises the process ID and handle of the process with
