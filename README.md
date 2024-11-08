@@ -10,4 +10,4 @@ The toggle_cheat.exe file is the cheat where pressing the button toggles the che
 The hold_cheats.exe file is the cheat where holding the button toggles the cheats on and off
 
 # Disclaimer
-I am not responsible for anything that happens when you use this software 
+I am not responsible for anything that happens when you use this software. If you do decide to use the cheats, consider disabling VAC beforehand.
